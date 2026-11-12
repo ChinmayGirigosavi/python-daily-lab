@@ -1,0 +1,6 @@
+# Question Blueprint Class
+
+class Mcq:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer

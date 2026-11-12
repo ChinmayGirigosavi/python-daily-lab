@@ -2,8 +2,8 @@
 Topic: For Loop Fundamentals & Iteration Patterns
 Description: Daily practice exploring string traversal, numerical changes,
             list iteration, and index-based iteration in python.
-Date: November 2026
 """
+
 # ------------------------------------------------------------------------
 # 1.Iterating over strings
 # ------------------------------------------------------------------------
@@ -41,7 +41,11 @@ for i in range(len(name)):
 friends = ["Priyanka", "Varun", "Shraddha", "Jimmy"]
 for index in range(len(friends)):
     print(friends[index])
-    
+   
+
+
+
+
 
 
 
