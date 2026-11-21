@@ -1,0 +1,1346 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ChinmayGirigosavi/python-daily-lab/blob/main/Python_fundamentals.ipynb%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "P962XwAOKkZX"
+      },
+      "source": [
+        "# **Input & Output**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YPtEeQLpXIZQ"
+      },
+      "source": [
+        "***1. Multiple Inputs***\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wOUbf_4PW50l",
+        "outputId": "6a70fd6c-2881-46cf-f6e6-f1e3eec2255c"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter your full name: Dr Robert Downy\n",
+            "Your full name is Dr Robert Downy\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Taking multiple inputs at once by using the split() method\n",
+        "name, middlename, surname = input(\"Enter your full name: \").split()\n",
+        "print(f\"Your full name is {name} {middlename} {surname}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "71iB2vwSd2k3"
+      },
+      "source": [
+        "***2. Data type and Type Casting (type conversion)***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "omRIeTq4SHA5",
+        "outputId": "a45171d8-d5df-4564-91d7-8e7f61967eee"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "<class 'int'> <class 'float'>\n",
+            "10.0 is now a <class 'float'> dataype.\n",
+            "10.0 is now a <class 'str'> datatype.\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = 10\n",
+        "b = 2.5\n",
+        "print(type(a), type(b))\n",
+        "\n",
+        "#type cast to float\n",
+        "a = float(a)\n",
+        "print(a, \"is now a\", type(a), \"dataype.\")\n",
+        "\n",
+        "#type cast to str\n",
+        "a = str(a)\n",
+        "print(f\"{a} is now a {type(a)} datatype.\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1PGj3sZOeMfX"
+      },
+      "source": [
+        "***3. Type conversion while using input() function***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qP-51ERXXLxT",
+        "outputId": "397fd2be-1b23-41a3-95ed-6e1a5bda478b"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter a number: 23\n",
+            "23 is <class 'str'> dataype\n",
+            "Enter a float strictly: 32.234\n",
+            "32.234 is <class 'float'> datatype\n"
+          ]
+        }
+      ],
+      "source": [
+        "#the default return type of the input() function is string(str)\n",
+        "num = input(\"Enter a number: \")\n",
+        "print(f'{num} is {type(num)} dataype')\n",
+        "\n",
+        "#Using explicit typecasting datatype conversion is possible at the output\n",
+        "num = float(input(\"Enter a float strictly: \"))\n",
+        "print(f'{num} is {type(num)} datatype')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "WBZ2Zl_KK_l1"
+      },
+      "source": [
+        "# *Variables*"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TKJCQUUYzyLU"
+      },
+      "source": [
+        "***4. Assigning Values to Multiple variables in a single line***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oFw5ubKneJkB",
+        "outputId": "55292e36-c032-42d5-aa0f-fd5d5b62aee7"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Manoj, Dhiraj, and Niraj scored 100, 100, 100\n",
+            "Manoj, Dhiraj, and Niraj scored 100, 200, and 300 respectively.\n",
+            "Python 3.34.1v 2026\n"
+          ]
+        }
+      ],
+      "source": [
+        "# assigning same values to multiple variables in a single line\n",
+        "manoj = dhiraj = niraj = 100\n",
+        "print(f'Manoj, Dhiraj, and Niraj scored {manoj}, {dhiraj}, {niraj}')\n",
+        "\n",
+        "# assigning different values to multiple variables in a single line\n",
+        "manoj, dhiraj, niraj = 100, 200, 300\n",
+        "print(f'Manoj, Dhiraj, and Niraj scored {manoj}, {dhiraj}, and {niraj} respectively.')\n",
+        "\n",
+        "#example\n",
+        "lang, ver, year = \"Python\", \"3.34.1v\", 2026\n",
+        "print(lang, ver, year)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qSLXe__E30Vo"
+      },
+      "source": [
+        "[***5. Concept of Object Reference***](https://www.geeksforgeeks.org/python/python-variables/)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z94XisAREPtb",
+        "outputId": "31a5336c-06b7-48ec-d3f2-c7e9391e6855"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "23\n",
+            "24\n",
+            "Chinmay\n",
+            "Chinmay Dhumal\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Variable Reassignment\n",
+        "x = 23\n",
+        "y = x\n",
+        "y = y + 1\n",
+        "\n",
+        "print(x)\n",
+        "print(y)\n",
+        "\n",
+        "\"\"\"Explaination:\n",
+        "In Python, the statement x = 23 means that x is a reference (or pointer)\n",
+        "to an integer object that contains the value 23.\n",
+        "• Python creates an integer object in memory to hold the value 23.\n",
+        "• The variable x is simply a name (or label) that points to that object's memory location.\n",
+        "\"\"\"\n",
+        "\n",
+        "user_name = \"Chinmay\"\n",
+        "user_id = user_name\n",
+        "user_id = user_id + \" Dhumal\"\n",
+        "\n",
+        "print(user_name)\n",
+        "print(user_id)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "upFVnfz6AAJ1"
+      },
+      "source": [
+        "***6. Deleting a variable***\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "id": "ebXaJB_oboyU",
+        "outputId": "d6002265-fca6-42d1-d017-3c5ba27010b0"
+      },
+      "outputs": [
+        {
+          "ename": "SyntaxError",
+          "evalue": "unterminated string literal (detected at line 7) (3587629509.py, line 7)",
+          "output_type": "error",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_815/3587629509.py\"\u001b[0;36m, line \u001b[0;32m7\u001b[0m\n\u001b[0;31m    print(service\")\u001b[0m\n\u001b[0m                 ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m unterminated string literal (detected at line 7)\n"
+          ]
+        }
+      ],
+      "source": [
+        "service = \"cloud\"\n",
+        "print(service, \"variable is not deleted yet.\")\n",
+        "\n",
+        "# del keyword is use to delete a variable from memory.\n",
+        "# After deletion the variable can no longer be accessed.\n",
+        "del service\n",
+        "print(service\")\n",
+        "\n",
+        "\n",
+        "#Swaping"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hn9OZSx-Cme-"
+      },
+      "source": [
+        "***7. Swaping variables***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dfdMski2AiId",
+        "outputId": "b1399694-a386-45c5-b1f3-9ba474d3a22d"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "23 19\n",
+            "25 15 5\n",
+            "5 25 15\n"
+          ]
+        }
+      ],
+      "source": [
+        "# By using multiple assignments it is possible to swap the values of multiple variables without creating a temporary variable\n",
+        "a, b = 19, 23\n",
+        "a, b = b, a\n",
+        "print(a, b)\n",
+        "\n",
+        "\n",
+        "c, d, e = 5, 15, 25\n",
+        "c, d, e = e, d, c\n",
+        "print(c, d, e)\n",
+        "\n",
+        "# c, d, e = e, c, d is also possible (here c=e, d=c, e=d)\n",
+        "c, d, e = e, c, d\n",
+        "print(c, d, e)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Q37tXK4YCw8N"
+      },
+      "source": [
+        "***8. Counting characters in a String***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lb4MmW65C1i9",
+        "outputId": "d03d934c-8caf-4bcb-87e8-82ad8c6e43bb"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "44\n"
+          ]
+        }
+      ],
+      "source": [
+        "philosopher = \"Aristotle the Greek Philosopher and Polymath\"\n",
+        "length = len(philosopher)\n",
+        "print(length)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fgQIoD2KKP6D"
+      },
+      "source": [
+        "# [*Operators*](https://www.geeksforgeeks.org/python/python-operators/)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zIibHv4MN0wD"
+      },
+      "source": [
+        "***1. Arithmetic Operators***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_Ab-P4TeJOSp",
+        "outputId": "887ab5b9-d3fb-481e-9bad-1dc573f20d0e"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Division:  2.5\n",
+            "Floor Divison:  2\n",
+            "Modulus:  1\n",
+            "Exponent:  25\n"
+          ]
+        }
+      ],
+      "source": [
+        "x = 5\n",
+        "y = 2\n",
+        "\n",
+        "# the division operator (/) returns a floating-point result.\n",
+        "print(\"Division: \", x/y)\n",
+        "\n",
+        "# while the floor division (//) returns an integer result.\n",
+        "print(\"Floor Divison: \", x//y)\n",
+        "\n",
+        "# Modulus returns remainder\n",
+        "print(\"Modulus: \", x%y)\n",
+        "\n",
+        "# Exponentiation\n",
+        "print(\"Exponent: \", x**y)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "lVM41o6fVMYA"
+      },
+      "source": [
+        "***2. Comparision Operators***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oWwVwCKsOp99",
+        "outputId": "3abb1151-2b31-46b2-d314-6df579b09c2e"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "True\n",
+            "False\n",
+            "False\n",
+            "True\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Comparison(or Relational) operators compares values.\n",
+        "# It either returns True or False according to the condition\n",
+        "\n",
+        "x = 22\n",
+        "y = 10\n",
+        "\n",
+        "print(x > y)\n",
+        "print(x < y)\n",
+        "print(x == y)\n",
+        "print(x != y)\n",
+        "print(x >= y)\n",
+        "print(x <= y)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BkCLKMUeWwNk"
+      },
+      "source": [
+        "***3. Logical Operators***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G4Lpo70-VjXd",
+        "outputId": "0287986f-dd68-4b71-dfb3-5a4b3448dfde"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "False\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Logcial operators are Logical AND, OR, NOT\n",
+        "# And are used to combine conditional statements\n",
+        "\n",
+        "x = 22\n",
+        "y = 20\n",
+        "print(x > y and x < y)\n",
+        "print(x > y or x < y)\n",
+        "print(not(x > y))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "W3AtzCmcYh6_"
+      },
+      "source": [
+        "***4. Assignment Operators***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xW6MfA8WW1jf",
+        "outputId": "a3e835dd-8730-43b1-9552-3949ed3bae25"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "20\n",
+            "40\n",
+            "20\n",
+            "400\n",
+            "20.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Assignment operators are used to assign values to the variables.\n",
+        "# This operator is used to assign the value of the right side of the expression to the left side operand.\n",
+        "\n",
+        "a = 20\n",
+        "b = a\n",
+        "print(b)\n",
+        "\n",
+        "b += a\n",
+        "print(b)\n",
+        "\n",
+        "b -= a\n",
+        "print(b)\n",
+        "\n",
+        "b *= a\n",
+        "print(b)\n",
+        "\n",
+        "b /= a\n",
+        "print(b)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hQFwt_5JYdGd"
+      },
+      "source": [
+        "***5. Bitwise Operators***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "17sibf-sYg_k"
+      },
+      "outputs": [],
+      "source": [
+        "#bitwise operators here...."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "h3AfUkVb8QTU"
+      },
+      "source": [
+        "***6. Identity Operators*** (is & is not)\n",
+        "* The 'is' and 'is not' operator in Python checks whether\n",
+        "two variables refer to the exact same object in memory.\n",
+        "* It is known as an identity operator."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "N_UhF2zq7N8y",
+        "outputId": "b2866bf7-9a7e-4300-df24-7fa001fd764a"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "True\n",
+            "False\n",
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "# both are used to check if two values are located on same part of the memory\n",
+        "\n",
+        "a = 20\n",
+        "b = 25\n",
+        "print(a is not b)\n",
+        "print(a is b)\n",
+        "\n",
+        "b = a\n",
+        "print(a is b)\n",
+        "\n",
+        "# is -> True if the operands are identical\n",
+        "# is not -> True if the operands are not identical"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d4XKasavDBbe"
+      },
+      "source": [
+        "7. [***Membership Operator***](https://www.geeksforgeeks.org/python/python-membership-identity-operators-not-not/)\n",
+        "\n",
+        "* 'in' is a membership operator in Python.\n",
+        "* It is used to test whether a value or an element exists within a sequence or a collection (such as a string, list, tuple, set, or dictionary)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f46226FZ8NXS",
+        "outputId": "ee513b91-85b3-4996-8810-36ddc014217b"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "True\n",
+            "False\n",
+            "True \n",
+            "\n",
+            "True\n",
+            "True\n",
+            "False \n",
+            "\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ],
+      "source": [
+        "# in and not in are the membership operators\n",
+        "rollno_list = [23,24, 25, 26, 28]\n",
+        "subject = \"Foundation of Data Science\"\n",
+        "dictionary = {1: \"Foundation\", 2: \"of\", 3: \"Data Science\"}\n",
+        "\n",
+        "print(28 in rollno_list)\n",
+        "print(30 in rollno_list)\n",
+        "# returns Flase because the element 30 does not exists inside the given sequence (rollno_list)\n",
+        "\n",
+        "print(30 not in rollno_list, \"\\n\")\n",
+        "# 'not in' operator confirms that the element 30 does not exists in rollno_list (given sequence)\n",
+        "\n",
+        "\n",
+        "print(\"Foundation\" in subject)\n",
+        "print(\"of\" in subject)\n",
+        "print(\"Of\" in subject, \"\\n\")\n",
+        "# returns False because Python is case sensitive ('of' does not equal 'Of')\n",
+        "\n",
+        "print(2 in dictionary)\n",
+        "print(\"Foundation\" in dictionary)\n",
+        "# False because dictionary membership checks keys, not values."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vzZa8rM_9_Uc"
+      },
+      "source": [
+        "8. ***operator.contains() method***\n",
+        "  \n",
+        "\n",
+        "* this operator is provided by the opertor module and works similar to 'in' operator\n",
+        "* Syntax: operator.contains(sequence, value)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WYE30-bF4fSS",
+        "outputId": "3eccd81b-485a-4bcf-b81d-99099aee7753"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "True\n",
+            "True\n",
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "import operator\n",
+        "print(operator.contains(rollno_list, 28))         # list\n",
+        "print(operator.contains(subject, \"Foundation\"))    # string\n",
+        "print(operator.contains(dictionary, 1))          # dictionary"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JV4uJRUSCXFt"
+      },
+      "source": [
+        "9. [***Ternary operators***](https://www.geeksforgeeks.org/python/ternary-operator-in-python/)\n",
+        "\n",
+        "Syntax:  [on_true] if [expression] else [on_false]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "pG0caTjh9-An"
+      },
+      "outputs": [],
+      "source": [
+        "# ternary operators here..."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5tq6Rm1lZdwZ"
+      },
+      "source": [
+        "Operator Precedence and Associativity\n",
+        "\n",
+        "***Operator Precedence:***\n",
+        "* It dictates the order in which operations are performed in an expression.\n",
+        "* Operators with higher precedence are evaluated before operators with lower precedence, like multiplication before addition.\n",
+        "* Parentheses can be used to override the default evaluation order.\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lR0LSSCBEc3x",
+        "outputId": "0b15541b-3460-47fe-cbd9-ea3d7cee7f4f"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "610\n"
+          ]
+        }
+      ],
+      "source": [
+        "# multiply(*) will happen first as it has higher precedence and + has lower precedence\n",
+        "expr = 10 + 20 * 30\n",
+        "print(expr)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "GTG6KOkdgJE9"
+      },
+      "source": [
+        "Logical operators (and, or, not) also follow precedence.\n",
+        "* precedence order:  NOT -> AND -> OR\n",
+        "* e.g., I will go if it doesn't(NOT) rain AND I finish work OR have a car. (Follows natural language logic)\n",
+        "([click for revision](https://www.geeksforgeeks.org/python/precedence-and-associativity-of-operators-in-python/))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H7NLPO5JdIqU",
+        "outputId": "b85a047f-4ffc-48ba-8225-bdeaacc3a2a0"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Hello! Welcome.\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Precedence of 'or' & 'and'\n",
+        "name = \"Alex\"\n",
+        "age = 0\n",
+        "if name == \"Alex\" or (name == \"John\" and age >= 2):\n",
+        "    print(\"Hello! Welcome.\")\n",
+        "else:\n",
+        "    print(\"Good Bye!!\")\n",
+        "\n",
+        "# name == \"John\" and age >= 2 is checked first, evaluates to False\n",
+        "# since name == \"Alex\" is True, the condition passes\n",
+        "\n",
+        "# This will evaluate same even if () is removed bcoz it follows the logical operator precedence, i.e AND first, OR after.\n",
+        "# Good practice to write () for better undersanding and readibility of code."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "H8Y25NY8kGbv"
+      },
+      "source": [
+        "***Operators Associativity:***\n",
+        "* It defines the evaluation direction for operators of equal precedence in an expression.\n",
+        "* Most operators evaluate left to right (+, -, *, /, %, AND, OR)\n",
+        "* NOT is excluded as it is a unary operator acting on a single operand, not connecting two operands like other operators. NOT simply reverses the truth value of a single condition. Therefore it doesn't have a direction of associativity.\n",
+        "* Exponentiation and assignment group evaluates right to left (**, =, +=, -=, *=, and /=)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HdZ7MGUWheNF",
+        "outputId": "d2fe64ec-251e-4ffa-883d-f45f3b1386c8"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "250.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "exp = 250 / 10 * 10\n",
+        "print(exp)\n",
+        "\n",
+        "# '/' is evaluated first as it is the leftmost\n",
+        "# '*' is evaluated after '/'\n",
+        "# / & * both have same precedence but Left to Right (LTR) associativity"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hSCU_dslhn49"
+      },
+      "source": [
+        "***Examples of LTR associativity for Multiplication, Division, Addition and Substraction***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tDbKw3rkmVrM",
+        "outputId": "94ad7348-19d6-4d8d-e463-0d426d0a89a1"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "100.0\n",
+            "6\n",
+            "1.0\n",
+            "0\n"
+          ]
+        }
+      ],
+      "source": [
+        "# LTR\n",
+        "print(100 / 10 * 10)\n",
+        "print(5 - 2 + 3)\n",
+        "\n",
+        "# parantheses() overrides the default LTR evaluation order\n",
+        "# operators inside () gets higher precedence, it decides the direction of operator associativity\n",
+        "print( 100 / (10 * 10))\n",
+        "print(5 - (2 + 3))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IRcAfF9whtU6"
+      },
+      "source": [
+        "***Examples of Exponentiation and assignment group as they evaluates right to left***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "voOGZJh_hqqN",
+        "outputId": "52612df2-d55e-4d05-f4c8-ead9a6d88f2e"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "134217728\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(2 ** 3 ** 3)\n",
+        "\n",
+        "# as exponenetiation evaluates from right to left\n",
+        "# (3 ** 3) will be evaluated first and then ( 2 ** (first evaluation))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eJnWXM_khyXB"
+      },
+      "source": [
+        "***Combining Operator Precedence and Associativity***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UZZmSvGShv7g",
+        "outputId": "8ac2ee88-0c98-4e82-ac69-0cab363f18f1"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "90.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(100 + 200 / 10 - 3 * 10)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "wPiMXhRnh1sZ"
+      },
+      "outputs": [],
+      "source": [
+        "# More problems"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZWVUq9aah6pS"
+      },
+      "source": [
+        "***Non-Associative Opertors***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "_rto4eXsh4jd"
+      },
+      "outputs": [],
+      "source": [
+        "# Examples"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "xv-fg_pxVm5q"
+      },
+      "source": [
+        "# Python Keywords\n",
+        "* Keywords are special reserved words that are part of the language itself.\n",
+        "* They define the rules and structure of Python programs which means you cannot use them as names for your variables, functions, classes or any other identifiers."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fLIygDYbh9OO",
+        "outputId": "87705f62-31ff-4672-a647-6473334ec832"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The list of Python keywords: \n",
+            "['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']\n",
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "# we can get the list of all python keywords using the below code\n",
+        "\n",
+        "import keyword\n",
+        "print(\"The list of Python keywords: \")\n",
+        "print(keyword.kwlist)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jWf4Y1dSWzYe",
+        "outputId": "1a7f0c0b-f298-487a-b793-759f9ede514b"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "True\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Using the 'in' / Membership operator we can check any keyword that exits in the list of python keywords\n",
+        "\n",
+        "import keyword\n",
+        "print(\"class\" in keyword.kwlist)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mIVBCskvaER9"
+      },
+      "source": [
+        "# Python Data Types\n",
+        "\n",
+        "* Data types in Python define the type of value stored in a variable and determine the operations that can be performed on that data.\n",
+        "* Python treats everything as an object, each value is associated with a specific data type.\n",
+        "\n",
+        "**Data Types** - Numeric, Dictionary, Boolean, Set, Sequence Type\n",
+        "\n",
+        "\n",
+        "**Numeric** - Integer, Float, Complex Number\n",
+        "\n",
+        "**Sequence Type** - String, Tuple, List"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KpW1LEzuXQUg",
+        "outputId": "cabefde4-8834-42bb-e3f1-f2fd59d2df6c"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "40 is a <class 'int'> data type\n",
+            "55.23 is a <class 'float'> data type\n",
+            "(2+5j) is a <class 'complex'> data type\n",
+            "Hello, chinmay is a <class 'str'> data type\n",
+            "['machine learning', 'deep learning', 'data science'] is a <class 'list'> data type\n",
+            "{'data science', 'machine learning', 'deep learning'} is a <class 'set'> data type\n",
+            "('machine learning', 'deep learning', 'data science') is a <class 'tuple'> data type\n"
+          ]
+        }
+      ],
+      "source": [
+        "# let's try out the data types for a single variable\n",
+        "\n",
+        "c = 40\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = 55.23\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = 2 + 5j\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = \"Hello, chinmay\"\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = [\"machine learning\", \"deep learning\", \"data science\"]\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = {\"machine learning\", \"deep learning\", \"data science\"}\n",
+        "print(f'{c} is a {type(c)} data type')\n",
+        "\n",
+        "c = (\"machine learning\", \"deep learning\", \"data science\")\n",
+        "print(f'{c} is a {type(c)} data type')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0d-h0EvCiAnq"
+      },
+      "source": [
+        "***1. Strings***\n",
+        "* Strings are used to store text data.\n",
+        "* And are created using single(''), double (\"\"), tripple (\"\"\" \"\"\") quotes."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ao7bl9q9ewvk",
+        "outputId": "74fccbf7-f91d-494f-8db6-c380062c2d37"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "This is a grocery store.\n",
+            "i\n",
+            "e\n"
+          ]
+        }
+      ],
+      "source": [
+        "store = \"This is a grocery store.\"\n",
+        "\n",
+        "print(store)\n",
+        "\n",
+        "# access characters: forward using positive and from backward using negative index\n",
+        "print(store[2])\n",
+        "print(store[-2])\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "oHk5uKoUjMrs"
+      },
+      "source": [
+        "***2. List [ ]***\n",
+        "\n",
+        "* Lists are ordered and mutable collections used to store multiple items in a single variable.\n",
+        "* Each element has a fixed index number (0, 1, 2, 3,...)\n",
+        "* Elements can be of different data types and are accessed using indexing."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ExywwRZlik1M",
+        "outputId": "14684599-72d8-4772-da6d-ce8341d54410"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['GenAI', 'Machine Learning', 'Deep Learning', 'Neural Networks', 'Artificial Intelligence']\n",
+            "Deep Learning\n",
+            "Neural Networks\n",
+            "['GenAI', 'Machine Learning']\n",
+            "[5, 5, 5, 5, 5, 5, 5, 5, 5, 5]\n",
+            "['GenAI', 'GenAI', 'GenAI', 'GenAI', 'GenAI']\n",
+            "['V2GenAI', 2.5, 2023, True, ['Readable', 'Writeable', 'Executable']]\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. Lists can be created using []\n",
+        "ai = [\"GenAI\", \"Machine Learning\", \"Deep Learning\", \"Neural Networks\", \"Artificial Intelligence\"]\n",
+        "\n",
+        "print(ai)\n",
+        "\n",
+        "# 2. Elements in a list can be access using index (positive and negative index both way accessing is possible)\n",
+        "print(ai[2])\n",
+        "print(ai[-2])\n",
+        "\n",
+        "\n",
+        "# 3. list() constructor can be used to create a list by passing an iterable (such as tuple, string or another list) to it\n",
+        "ai_list = list((\"GenAI\", \"Machine Learning\"))\n",
+        "print(ai_list)\n",
+        "\n",
+        "\n",
+        "# 4. List can also be created with repeated elements using multiplication operator (*)\n",
+        "multiple_ai = [5] * 10\n",
+        "print(multiple_ai)\n",
+        "\n",
+        "multiple_ai = [\"GenAI\"] * 5\n",
+        "print(multiple_ai)\n",
+        "\n",
+        "\n",
+        "# 5. Lists can contain elements with different data types\n",
+        "ai_engine = [\"V2GenAI\", 2.5, 2023, True, [\"Readable\", \"Writeable\", \"Executable\"]]\n",
+        "print(ai_engine)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "***Methods in a list*** - append(), insert(), extend(), remove(), pop(), del, clear()"
+      ],
+      "metadata": {
+        "id": "WaZ-qBAg8UZf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cGdKsVu4xJdu"
+      },
+      "outputs": [],
+      "source": [
+        "# 1. Append()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "XRl7Hm_4x2bE"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "XZ8prKWGx2TJ"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "OUrVsj9pxvYd"
+      },
+      "outputs": [],
+      "source": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNJahXUPSFcn9V6YNO0ft+n",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
